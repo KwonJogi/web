@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function idLengthChech() {
+        let id = document.getElementById("id").value;
+
+        if (id.length < 4) {
+          result.innerHTML =
+            "<img src='./image/no.png' /><br/>아이디는 4글자 이상으로 입력해주세요.";
+        } else {
+          result.innerHTML = "<img src='./image/ok.png' />";
+        }
+      }
+
+      function passwordCheck() {
+        let password = document.getElementById("password").value;
+        let passwordCheck = document.getElementById("password-check").value;
+
+        if (password === passwordCheck) {
+          result.innerHTML = "<img src='./image/ok.png' />";
+        } else {
+          result.innerHTML =
+            "<img src='./image/no.png' /><br/>비밀번호가 다릅니다.";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <input id="id" type="text" placeholder="아이디" />
+    <button onclick="idLengthChech()">글자 수 체크</button>
+    <br />
+    <input id="password" type="password" placeholder="비밀번호" />
+    <br />
+    <input id="password-check" type="password" placeholder="비밀번호 체크" />
+    <button onclick="passwordCheck()">비밀번호 체크</button>
+    <div id="result"></div>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function hi() {
+        console.log("hi");
+      }
+      function bye() {
+        console.log("bye");
+      }
+
+      function logInCheck() {
+        let id = document.getElementById("id").value;
+        let password = document.getElementById("password").value;
+        let result = document.getElementById("result");
+
+        if (id === "root" && password === "1234") {
+          result.innerHTML = "로그인 성공";
+        } else {
+          result.innerHTML = "로그인 실패";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="hi()" style="margin-bottom: 10px">hi</button>
+    <br />
+    <button onclick="bye()">bye</button>
+    <hr color="red" />
+
+    <input id="id" type="text" placeholder="아이디" />
+    <input id="password" type="password" placeholder="패스워드" />
+    <button onclick="logInCheck()">로그인 처리</button>
+    <br />
+    <div id="result"></div>
+  </body>
+</html>
