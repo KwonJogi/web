@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <script>
+      function onClickButton() {
+        let movieName = document.getElementById("movie-name").value;
+        let movieTime = document.getElementById("movie-time").value;
+        let moviePersonnel = document.getElementById("movie-personnel").value;
+
+        document.getElementById("td-movie-name").innerHTML = movieName;
+        document.getElementById("td-movie-time").innerHTML = movieTime;
+        document.getElementById("td-movie-personnel").innerHTML =
+          moviePersonnel;
+      }
+    </script>
+  </head>
+  <body>
+    <a href="index.html"><header id="main-header">cinema</header></a>
+    <nav>
+      <ul id="nav-ul">
+        <a href="./location.html"><li>찾아오시는 길</li></a>
+      </ul>
+    </nav>
+    <div class="div-wrapper">
+      <div class="first-div">
+        <img src="./image/1.jpg" alt="" />
+        <img src="./image/2.jpg" alt="" />
+        <img src="./image/3.jpg" alt="" />
+        <img src="./image/4.jpg" alt="" />
+      </div>
+      <div class="second-div">
+        <form action="">
+          <h1 style="margin-bottom: 20px; font-size: 40px">예매하기</h1>
+          <p>영화 제목</p>
+          <input id="movie-name" type="text" placeholder="영화 제목" />
+          <br />
+          <p style="margin-top: 12px">상영 날짜</p>
+          <input id="movie-time" type="date" />
+          <br />
+          <p style="margin-top: 12px">인원</p>
+          <input id="movie-personnel" type="number" placeholder="인원" />
+          <br />
+          <button
+            style="margin-top: 12px"
+            type="button"
+            onclick="onClickButton()"
+          >
+            예매하기
+          </button>
+          <br />
+        </form>
+        <div style="margin-top: 12px"></div>
+      </div>
+      <div class="third-div">
+        <table style="margin-top: 12px">
+          <tr>
+            <th>영화 제목</th>
+            <th>상영 날짜</th>
+            <th>인원</th>
+          </tr>
+          <tr>
+            <td id="td-movie-name"></td>
+            <td id="td-movie-time"></td>
+            <td id="td-movie-personnel"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

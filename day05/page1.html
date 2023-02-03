@@ -5,10 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script></script>
+    <script>
+      function payment() {
+        let store = document.getElementById("store").value;
+        let price = document.getElementById("price").value;
+        let select = document.getElementById("select").value;
+        let result = document.getElementById("result");
+
+        if (select === "2") {
+          price = parseInt(price) + 1000;
+        } else if (select === "3") {
+          price = parseInt(price) + 500;
+        }
+
+        result.innerHTML =
+          store +
+          "에서 " +
+          "<font color='red'>" +
+          price +
+          "</font>" +
+          "원을 결제수단 " +
+          select +
+          "번으로 결제했습니다.";
+      }
+    </script>
   </head>
   <body>
-    <input type="text" placeholder="구매상점" />
-    <input type="number" placeholder="결제금액" />
+    <hr color="red" />
+    <input id="store" type="text" placeholder="구매상점" />
+    <br />
+    <input id="price" type="number" placeholder="결제금액" />
+    <div>입력수단 1)계좌이체, 2)신용카드, 3)휴대폰결제</div>
+    <input id="select" type="number" placeholder="입력수단을 선택하세요." />
+    <br />
+    <button onclick="payment()">결제 버튼</button>
+    <hr color="blue" />
+    <div id="result"></div>
   </body>
 </html>

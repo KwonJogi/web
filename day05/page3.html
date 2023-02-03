@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function tripPlan() {
+        let place = document.getElementById("place").value;
+        let month = document.getElementById("month").value;
+        let select = document.getElementById("select");
+        let transportation = select.options[select.selectedIndex].text;
+        let result = document.getElementById("result");
+        let price = 0;
+
+        if (transportation === "비행기") {
+          price = 30000;
+        } else if (transportation === "버스") {
+          price = 10000;
+        } else {
+          price = 50000;
+        }
+
+        result.innerHTML =
+          "나는 " +
+          month +
+          "월에 " +
+          place +
+          "으로 " +
+          select.options[select.selectedIndex].text +
+          "를 타고 여행을 갈거예요. 비용은 " +
+          price +
+          "원";
+      }
+    </script>
+  </head>
+  <body>
+    <hr color="red" />
+    여행가고 싶은 곳 : <input id="place" type="text" />
+    <br />
+    몇 월에 갈까요? : <input id="month" type="number" />
+    <br />
+    어떻게 :
+    <select id="select">
+      <option>비행기</option>
+      <option>버스</option>
+      <option>자가용</option>
+    </select>
+
+    <br />
+    <button onclick="tripPlan()">여행 계획</button>
+    <hr color="blue" />
+    <div id="result"></div>
+  </body>
+</html>
